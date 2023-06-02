@@ -1,0 +1,49 @@
+.app-sidebar {
+  background-color: var(--component-background);
+  font-variant-numeric: tabular-nums;
+  box-shadow: 2px 0 8px rgb(0 0 0 / 4%), 12px 0 24px rgb(64 64 64 / 4%);
+  position: fixed;
+  height: 100vh;
+  a {
+    color: var(--text-color);
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .ant-menu {
+    background: transparent;
+    width: 100% !important;
+  }
+
+  .ant-menu-item,
+  .ant-menu-submenu-title {
+    &.ant-menu-item-selected {
+      box-shadow: inset 4px 0 0 #485dea;
+      background-color: transparent;
+      color: inherit;
+    }
+  }
+}
+
+.ant-menu-sub {
+  padding: 16px 0px !important;
+}
+
+.ant-menu-item,
+.ant-menu-submenu-title {
+  font-size: 18px;
+  font-weight: 400;
+  transition: 0.3s;
+  display: flex !important;
+  align-items: center !important;
+  padding: 16px 32px;
+  height: 56px !important;
+}
+
+.ant-menu-submenu-arrow::before,
+.ant-menu-submenu-arrow::after {
+  width: 8px;
+  right: 18px;
+}

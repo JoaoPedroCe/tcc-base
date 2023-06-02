@@ -1,0 +1,28 @@
+{
+  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers"],
+  "extends": ["next", "next/core-web-vitals"],
+  "rules": {
+    "react/display-name": "off",
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "/^next/",
+          "module",
+          "/^~/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
+  },
+  "parserOptions": {
+    "createDefaultProgram": true,
+    "project": "tsconfig.json"
+  }
+}
