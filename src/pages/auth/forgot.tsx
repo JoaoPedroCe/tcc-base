@@ -63,7 +63,7 @@ const Forgot = () => {
                 layout="vertical"
                 validateTrigger={false}
                 size="large"
-                className="min-w-[400px] max-w-[400px] p-6 shadow-card"
+                className="min-w-[400px] max-w-[400px] p-6 drop-shadow-md md:min-w-[400px] rounded-md"
               >
                 <Form.Item name="email" hasFeedback>
                   <Input
