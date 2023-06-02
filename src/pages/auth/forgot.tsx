@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { LoginOutlined, MailOutlined } from '@ant-design/icons'
-import { Form, Input, Button, Row, Space, message, Image } from 'antd'
+import { Form, Input, Button, Row, Space, message, Image, Col } from 'antd'
 
 import AuthLayout from '~/components/Layout/Auth'
 import i18n from '~/i18n'
@@ -35,70 +35,77 @@ const Forgot = () => {
   return (
     <AuthLayout>
       <Row style={{ minWidth: '100vw', minHeight: '100vh' }} align="middle">
-        <Row justify="center" align="middle" className="h-1/2">
-          <Row
-            justify="center"
-            align="middle"
-            style={{ minWidth: '100vw' }}
-            className="mb-9"
-          >
-            <Image
-              preview={false}
-              src="/sindalquim-logo.png"
-              alt="sindalquim-logo"
-              className="object-contain w-48 md:w-48"
-            />
-          </Row>
-          <Row justify="center" align="middle" style={{ minWidth: '100vw' }}>
-            <Form
-              form={form}
-              initialValues={{ remember: true }}
-              onFinish={onForgot}
-              layout="vertical"
-              validateTrigger={false}
-              size="large"
-              className="min-w-[400px] max-w-[400px] p-6 shadow-card"
-            >
-              <Form.Item name="email" hasFeedback>
-                <Input
-                  prefix={<MailOutlined />}
-                  placeholder={i18n.email}
-                  allowClear
-                />
-              </Form.Item>
-
-              <Space size={8} direction="vertical" className="w-full">
-                <Form.Item noStyle shouldUpdate={() => true}>
-                  {({ getFieldsValue }) => {
-                    const { email } = getFieldsValue()
-                    return (
-                      <Button
-                        type="primary"
-                        htmlType="submit"
-                        block
-                        loading={isSubmitting}
-                        disabled={!email}
-                      >
-                        {i18n.send}
-                      </Button>
-                    )
-                  }}
+        <Col
+          style={{
+            minWidth: '60vw',
+            height: '100vh',
+            backgroundColor: '#191919'
+          }}
+          className="flex justify-center"
+        >
+          <Image
+            alt="logo"
+            src="/image.png"
+            preview={false}
+            className="mt-20"
+          />
+        </Col>
+        <Col
+          style={{ minWidth: '40vw', height: '100vh' }}
+          className="flex bg-slate-50	"
+        >
+          <Row justify="center" align="middle" className="w-full">
+            <Row justify="center" align="middle">
+              <Form
+                form={form}
+                initialValues={{ remember: true }}
+                onFinish={onForgot}
+                layout="vertical"
+                validateTrigger={false}
+                size="large"
+                className="min-w-[400px] max-w-[400px] p-6 shadow-card"
+              >
+                <Form.Item name="email" hasFeedback>
+                  <Input
+                    prefix={<MailOutlined />}
+                    placeholder={i18n.email}
+                    allowClear
+                  />
                 </Form.Item>
 
-                <Link href={ROUTES.auth.signin} passHref>
-                  <Button
-                    size="small"
-                    type="link"
-                    block
-                    icon={<LoginOutlined />}
-                  >
-                    {i18n.enter}
-                  </Button>
-                </Link>
-              </Space>
-            </Form>
+                <Space size={8} direction="vertical" className="w-full">
+                  <Form.Item noStyle shouldUpdate={() => true}>
+                    {({ getFieldsValue }) => {
+                      const { email } = getFieldsValue()
+                      return (
+                        <Button
+                          type="primary"
+                          htmlType="submit"
+                          block
+                          loading={isSubmitting}
+                          disabled={!email}
+                        >
+                          {i18n.send}
+                        </Button>
+                      )
+                    }}
+                  </Form.Item>
+
+                  <Link href={ROUTES.auth.signin} passHref>
+                    <Button
+                      size="small"
+                      type="link"
+                      block
+                      icon={<LoginOutlined />}
+                    >
+                      {i18n.enter}
+                    </Button>
+                  </Link>
+                </Space>
+              </Form>
+            </Row>
           </Row>
-        </Row>
+        </Col>
       </Row>
     </AuthLayout>
   )
