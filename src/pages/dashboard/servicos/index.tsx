@@ -9,6 +9,7 @@ import Table from '~/components/Table'
 import TableActionsCell from '~/components/Table/TableActionsCell'
 import { Publication } from '~/hooks/usePublication'
 import usePublications from '~/hooks/usePublications'
+import { Vehicle } from '~/hooks/useVehicle'
 import useVehicles from '~/hooks/useVehicles'
 import i18n from '~/i18n'
 import { defaultPropsTablePagination } from '~/utils/table'
@@ -16,7 +17,7 @@ import { defaultPropsTablePagination } from '~/utils/table'
 const Publications = () => {
   const { data, isFetching, refetch } = useVehicles()
   const { data: publications, meta } = data || {}
-  const columns: ColumnsType<Publication> = [
+  const columns: ColumnsType<Vehicle> = [
     {
       title: 'Placa do veículo',
       dataIndex: 'plate',
@@ -62,10 +63,10 @@ const Publications = () => {
   ]
 
   return (
-    <DefaultLayout title='Manutenções'>
+    <DefaultLayout title={i18n.budget}>
       <LayoutContentCard
         extra={
-          <TableActionsExtra entityName='Manutenções' onReloadClick={refetch} />
+          <TableActionsExtra entityName={i18n.budget} onReloadClick={refetch} />
         }
       >
         <Table

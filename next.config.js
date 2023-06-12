@@ -36,7 +36,9 @@ module.exports = withLess({
         'associates',
         'collectiveAgreements',
         'publications',
-        'veiculos'
+        'veiculos',
+        'importAssociates',
+        'servicos'
       ])
     ]
   }
