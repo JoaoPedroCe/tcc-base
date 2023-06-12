@@ -7,7 +7,7 @@ export type CrudRouteType = {
   edit: (path: string) => string
 }
 
-export const CRUD_ROUTES = ['users', 'associates', 'privacyPolicies']
+export const CRUD_ROUTES = ['usuarios']
 
 function getDefaultCrudRoutes(
   name: string,
@@ -33,14 +33,12 @@ const ROUTES = {
     signup: '/auth/signup',
     reset: (token: string) => '/auth/signin/' + token
   },
-  users: getDefaultCrudRoutes('users'),
-  collectiveAgreements: getDefaultCrudRoutes('collectiveAgreements'),
-  privacyPolicies: getDefaultCrudRoutes('privacyPolicies'),
-  associates: getDefaultCrudRoutes('associates'),
-  medicalGuide: getDefaultCrudRoutes('medicalGuide'),
-  publications: getDefaultCrudRoutes('publications'),
-  importAssociates: getDefaultCrudRoutes('importAssociates'),
+  usuarios: getDefaultCrudRoutes('usuarios'),
+  clientes: getDefaultCrudRoutes('clientes'),
+  agendamentos: getDefaultCrudRoutes('agendamentos'),
+  orcamentos: getDefaultCrudRoutes('orcamentos'),
   veiculos: getDefaultCrudRoutes('veiculos'),
+  manutencoes: getDefaultCrudRoutes('manutencoes'),
   settings: {
     index: AUTHENTICATED_INDEX_ROUTE + '/settings',
     crud: false

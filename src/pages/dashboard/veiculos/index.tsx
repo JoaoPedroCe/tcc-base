@@ -62,7 +62,7 @@ const Publications = () => {
   ]
 
   return (
-    <DefaultLayout title={i18n.budget}>
+    <DefaultLayout title={i18n.veículo}>
       <LayoutContentCard
         extra={
           <TableActionsExtra entityName={i18n.budget} onReloadClick={refetch} />

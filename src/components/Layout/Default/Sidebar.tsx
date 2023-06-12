@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { FaScrewdriver } from 'react-icons/fa'
 
 import Link from 'next/link'
 
@@ -12,7 +13,6 @@ import {
   ReadOutlined,
   FileExcelOutlined,
   CalendarOutlined,
-  CreditCardOutlined,
   CarOutlined,
   SettingOutlined
 } from '@ant-design/icons'
@@ -36,26 +36,14 @@ export const useSidebarCollapsedState =
 
 const items: ItemType[] = [
   {
-    key: '/users',
+    key: '/usuarios',
     icon: <UserOutlined />,
-    label: <Link href={ROUTES.users.index}>{i18n.users}</Link>
+    label: <Link href={ROUTES.usuarios.index}>{i18n.users}</Link>
   },
   {
-    key: '/associates',
+    key: '/clientes',
     icon: <TeamOutlined />,
-    label: <Link href={ROUTES.associates.index}>{i18n.customers}</Link>
-  },
-  {
-    key: '/publications',
-    icon: <ReadOutlined />,
-    label: <Link href={ROUTES.publications.index}>{i18n.budget}</Link>
-  },
-  {
-    key: '/collectiveAgreements',
-    icon: <CalendarOutlined />,
-    label: (
-      <Link href={ROUTES.collectiveAgreements.index}>{i18n.schedules}</Link>
-    )
+    label: <Link href={ROUTES.clientes.index}>{i18n.customers}</Link>
   },
   {
     key: '/veiculos',
@@ -63,14 +51,19 @@ const items: ItemType[] = [
     label: <Link href={ROUTES.veiculos.index}>{i18n.veículo}</Link>
   },
   {
-    key: '/importAssociates',
-    icon: <SettingOutlined />,
-    label: <Link href={ROUTES.importAssociates.index}>{i18n.manutentions}</Link>
+    key: '/orcamentos',
+    icon: <ReadOutlined />,
+    label: <Link href={ROUTES.orcamentos.index}>{i18n.budget}</Link>
   },
   {
-    key: '/importAssociates',
-    icon: <CreditCardOutlined />,
-    label: <Link href={ROUTES.importAssociates.index}>{i18n.payments}</Link>
+    key: '/agendamentos',
+    icon: <CalendarOutlined />,
+    label: <Link href={ROUTES.agendamentos.index}>{i18n.schedules}</Link>
+  },
+  {
+    key: '/manutencoes',
+    icon: <FaScrewdriver />,
+    label: <Link href={ROUTES.manutencoes.index}>{i18n.manutentions}</Link>
   }
 ]
 

@@ -36,7 +36,7 @@ const SignIn = () => {
       const { token, user } = await signIn(values)
       if (user.acceptedTerms) {
         SetAuthenticationToken(token)
-        return Router.push('/dashboard/associates')
+        return Router.push('/dashboard/')
       }
       setPrivacyPolicyModalVisible(true)
       setUserToken(token)

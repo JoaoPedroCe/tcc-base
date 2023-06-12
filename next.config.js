@@ -32,12 +32,12 @@ module.exports = withLess({
   rewrites() {
     return [
       ...rewriteCruds([
-        'users',
-        'associates',
-        'collectiveAgreements',
-        'publications',
+        'usuarios',
+        'clientes',
+        'agendamentos',
+        'orcamentos',
         'veiculos',
-        'importAssociates',
+        'manutencoes',
         'servicos'
       ])
     ]
