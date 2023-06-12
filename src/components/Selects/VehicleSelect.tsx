@@ -1,8 +1,4 @@
 import { Select, SelectProps } from 'antd'
-import { sortBy } from 'lodash'
-import useVehicle from '~/hooks/useVehicle'
-
-import i18n from '~/i18n'
 
 type isVolunteerPartnerProps = { id: number } & SelectProps
 

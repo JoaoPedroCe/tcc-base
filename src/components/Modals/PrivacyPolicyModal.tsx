@@ -30,7 +30,7 @@ const PrivacyPolicyModal = ({
     SetAuthenticationToken(userToken)
     setUser({ ...user, acceptedTerms: true })
     await storeUserAcceptedPrivacyPolicyMutate()
-    Router.push('/dashboard/associates')
+    Router.push('/dashboard')
   }
 
   return (
